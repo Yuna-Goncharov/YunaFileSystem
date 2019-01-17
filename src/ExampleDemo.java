@@ -43,7 +43,7 @@ public class ExampleDemo {
 
         System.out.println("Building a mock file system using the addFile and addDir methods");
 
-        builFileSystem(exploreFile);
+        buildFileSystem(exploreFile);
 
         scanner.nextLine();
 
@@ -70,30 +70,30 @@ public class ExampleDemo {
         scanner.nextLine();
     }
 
-    static void builFileSystem(ExploreFileBS exploreFile) {
+    static void buildFileSystem(ExploreFileBS exploreFile) {
 
-        ExploreFileBS.addFile("/", "file_1", 10);
-        ExploreFileBS.addFile("/", "file_2", 20);
+        exploreFile.addFile("/", "file_1Test", 10);
+        exploreFile.addFile("/", "file_2Test", 20);
 
-        ExploreFileBS.addDir("/", "dir_a");
-        ExploreFileBS.addFile("dir_a", "file_a1", 30);
-        ExploreFileBS.addFile("dir_a", "file_a2", 40);
+        exploreFile.addDir("/", "dir_a");
+        exploreFile.addFile("dir_a", "file_a1", 30);
+        exploreFile.addFile("dir_a", "file_a2", 40);
 
-        ExploreFileBS.addDir("/", "dir_b");
-        ExploreFileBS.addFile("dir_b", "file_b1", 30);
-        ExploreFileBS.addFile("dir_b", "file_b2", 40);
+        exploreFile.addDir("/", "dir_b");
+        exploreFile.addFile("dir_b", "file_b1", 30);
+        exploreFile.addFile("dir_b", "file_b2", 40);
 
-        ExploreFileBS.addDir("dir_b", "dir_ba");
-        ExploreFileBS.addFile("dir_ba", "file_ba1", 30);
-        ExploreFileBS.addFile("dir_ba", "file_ba2", 40);
-        ExploreFileBS.addFile("dir_ba", "file_ba3", 40);
-        ExploreFileBS.addFile("dir_ba", "file_ba4", 40);
+        exploreFile.addDir("dir_b", "dir_ba");
+        exploreFile.addFile("dir_ba", "file_ba1", 30);
+        exploreFile.addFile("dir_ba", "file_ba2", 40);
+        exploreFile.addFile("dir_ba", "file_ba3", 40);
+        exploreFile.addFile("dir_ba", "file_ba4", 40);
 
-        ExploreFileBS.addDir("/", "dir_c");
-        ExploreFileBS.addDir("dir_c", "dir_ca");
-        ExploreFileBS.addDir("dir_c", "dir_cb");
-        ExploreFileBS.addFile("dir_ca", "file_ca1", 30);
-        ExploreFileBS.addFile("dir_cb", "file_cb1", 40);
+        exploreFile.addDir("/", "dir_c");
+        exploreFile.addDir("dir_c", "dir_ca");
+        exploreFile.addDir("dir_c", "dir_cb");
+        exploreFile.addFile("dir_ca", "file_ca1", 30);
+        exploreFile.addFile("dir_cb", "file_cb1", 40);
     }
 
 }

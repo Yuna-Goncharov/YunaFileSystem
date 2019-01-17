@@ -38,27 +38,27 @@ public class ExampleDemo {
 
         ExploreFileBS exploreFile = new FS_explorer();
 
-        System.out.println("Starting basic demonstration, hit enter each step to continue");
+        System.out.println("Starting basic demonstration, hit enter each step in order to continue");
         scanner.nextLine();
 
-        System.out.println("Building a mock file system using the addFile and addDir methods");
+        System.out.println("Building a mock example file system using the addFile and addDir methods");
 
         buildFileSystem(exploreFile);
 
         scanner.nextLine();
 
         System.out.println("Printing file system using showFileSystem method");
-        System.out.println("starting from the root");
+        System.out.println("Starting from the root file");
         scanner.nextLine();
 
         exploreFile.showFileSystem();
 
-        System.out.println("Hit enter to continue");
+        System.out.println("Press enter button to continue");
         scanner.nextLine();
 
-        System.out.println("Deleting '/file_2' using the delete method");
+        System.out.println("Deleting '/file_2Test' using the delete method");
         System.out.println("Deleting '/dir_c' using the delete method");
-        exploreFile.delete("file_2");
+        exploreFile.delete("file_2Test");
         exploreFile.delete("dir_c");
 
         System.out.println("\nPrinting file system after deletion");

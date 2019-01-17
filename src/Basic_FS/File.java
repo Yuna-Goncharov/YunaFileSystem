@@ -22,7 +22,8 @@ class File extends BasicFSItem {
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return super.name;
     }
 }

@@ -18,7 +18,7 @@ class File extends BasicFSItem {
 
     public void print(){
         DateFormat dateFormat = new SimpleDateFormat("MMM d HH:mm");
-        System.out.println(this.size + "The size file " + dateFormat.format(super.creationDate) + " " + super.name);
+        System.out.println("The File size is: " + this.size + "K " + dateFormat.format(super.creationDate) + " " + super.name);
     }
 
     @Override

@@ -3,7 +3,7 @@
 
         public static void main(String[] args) {
 
-            int  BASIC = 11;
+            int  BASIC = 1;
             int selection = ExampleDemo.getUserImput();
 
             if(selection == BASIC)

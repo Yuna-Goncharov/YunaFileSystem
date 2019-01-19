@@ -72,8 +72,8 @@ public class ExampleDemo {
 
     static void buildFileSystem(ExploreFileBS exploreFile) {
 
-        exploreFile.addFile("/", "file_1Test", 10);
-        exploreFile.addFile("/", "file_2Test", 20);
+//        exploreFile.addFile("/", "file_1Test", 10);
+//        exploreFile.addFile("/", "file_2Test", 20);
 
         exploreFile.addDir("/", "dir_a");
         exploreFile.addFile("dir_a", "file_a1", 30);

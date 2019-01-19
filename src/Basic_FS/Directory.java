@@ -16,7 +16,7 @@ public class Directory extends BasicFSItem {
     }
 
     public void printData(Boolean recursiveData){
-        Directory.printDataRecursive(this, 0 , recursiveData);
+        Directory.printDataRecursive(this, 0 , recursiveData );
     }
 
     //print all data content from directory , @param dir - directory to start from
@@ -24,12 +24,12 @@ public class Directory extends BasicFSItem {
 
     private static void printDataRecursive(Directory dir , int start , boolean recursiveData){
         for(BasicFSItem item : dir.data){
-            for(int i = 0 ; i < start*2 ; i++){
-                System.out.println("-");
+            for(int i = 0 ; i < start*1 ; i++){
+                System.out.println("    ---" );
             }
             item.print();
             if(recursiveData && item instanceof Directory){
-                printDataRecursive((Directory) item , ++start , true);
+                printDataRecursive((Directory) item , ++start , true );
                 start--;
             }
         }

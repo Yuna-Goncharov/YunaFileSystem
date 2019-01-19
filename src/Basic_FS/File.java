@@ -15,15 +15,14 @@ class File extends BasicFSItem implements Serializable {
         this.size = size;
     }
 
-    public void print(int index){
+    public void print(int index) {
         printTab(index);
         DateFormat dateFormat = new SimpleDateFormat("MMM d HH:mm");
-        System.out.println(super.name  + "   " + "[" +  dateFormat.format(super.creationDate) + " " + "  The File size is: " + this.size + "K]");
+        System.out.println(super.name + "   " + "[" + dateFormat.format(super.creationDate) + " " + "  The File size is: " + this.size + "K]");
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return super.name;
     }
 }

@@ -14,11 +14,11 @@ public class Directory extends BasicFSItem implements Serializable {
         super(name);
     }
 
-    public void printData() {
+    void printData() {
         print(0);
     }
 
-    public void addItem(BasicFSItem newItem) {
+    void addItem(BasicFSItem newItem) {
         this.data.add(newItem);
     }
 
@@ -30,7 +30,7 @@ public class Directory extends BasicFSItem implements Serializable {
     //Find an item on directory, @param dir is the directory to start from , @param name it the item we searching
     //@param recursiveItem boolean if we need to search in sub-directory
     //return null is not found or the Basic_FS.BasicFSItem
-    public static BasicFSItem find(Directory dir, String name, Boolean recursiveItem) {
+    static BasicFSItem find(Directory dir, String name, Boolean recursiveItem) {
         for (BasicFSItem item : dir.data) {
             if (item.name.equals(name)) {
                 return item;
@@ -46,11 +46,7 @@ public class Directory extends BasicFSItem implements Serializable {
 
     //method to find item in this directory only
 
-    public BasicFSItem findInCurrDir(String name) {
-        return Directory.find(this, name, false);
-    }
-
-    public void delete(BasicFSItem item) {
+    void delete(BasicFSItem item) {
         if (item.name.equals("/")) {
             System.out.println(Error.DELETE_ROOT_FOLDER);
             return;
@@ -61,15 +57,14 @@ public class Directory extends BasicFSItem implements Serializable {
     public void print(int index) {
         printTab(index);
         DateFormat dateFormat = new SimpleDateFormat("MMM d HH:mm");
-        System.out.println( name + " " + "[" + dateFormat.format(super.creationDate) + "]");
+        System.out.println(name + " " + "[" + dateFormat.format(super.creationDate) + "]");
         for (BasicFSItem item : getData()) {
             item.print(index + 1);
         }
 
     }
 
-    public LinkedList<BasicFSItem> getData() {
+    private LinkedList<BasicFSItem> getData() {
         return this.data;
     }
-
 }

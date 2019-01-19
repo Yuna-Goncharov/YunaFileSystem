@@ -1,5 +1,5 @@
-import Basic_FS.*;
 import Basic_FS.ExploreFileBS;
+import Basic_FS.FS_explorer;
 
 import java.util.Scanner;
 

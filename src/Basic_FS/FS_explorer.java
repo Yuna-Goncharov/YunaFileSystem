@@ -20,7 +20,7 @@ public class FS_explorer implements ExploreFileBS {
         }
     }
 
-    public void saveDataToFile(){
+    public void saveDataToFile() {
         writeRootToFile();
     }
 
@@ -43,11 +43,11 @@ public class FS_explorer implements ExploreFileBS {
 
         BasicFSItem rmCandidate = Directory.find(this.root, name, true);
 
-        if (rmCandidate == null)
+        if (rmCandidate == null) {
             System.out.println("Cant find " + name);
-        else
+        } else {
             rmCandidate.parent.delete(rmCandidate);
-
+        }
     }
 
     public void showFileSystem() {

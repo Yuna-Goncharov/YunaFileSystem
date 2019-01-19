@@ -3,8 +3,8 @@
 
         public static void main(String[] args) {
 
-            int  BASIC = 1;
-            int selection = ExampleDemo.getUserImput();
+            int BASIC = 1;
+            int selection = ExampleDemo.getUserInput();
 
             if(selection == BASIC)
                 ExampleDemo.runBasicExplorer();

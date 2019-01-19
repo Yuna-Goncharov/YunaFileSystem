@@ -1,7 +1,6 @@
 package Basic_FS;
 
 public interface ExploreFileBS {
-    //wanted functions
 
     void addFile(String parentDirName, String fileName, int fileSize);
 
@@ -11,4 +10,5 @@ public interface ExploreFileBS {
 
     void showFileSystem();
 
+    void saveDataToFile();
 }

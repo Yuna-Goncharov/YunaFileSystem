@@ -5,14 +5,13 @@ import java.util.Scanner;
 
 //User demo for file system operations
 
-public class ExampleDemo {
+class ExampleDemo {
 
-    static int getUserImput(){
+    static int getUserInput() {
 
         Scanner scanner = new Scanner(System.in);
         boolean waitingForInput = true;
         String selection = "-1";
-
 
         System.out.println("Choose demonstration type:");
         System.out.println("    1: Basic Example - Run a demo that calls the required functions");
@@ -20,30 +19,38 @@ public class ExampleDemo {
         System.out.println("    Or Close this window. ");
 
 
-        while(waitingForInput){
-            selection = scanner.next().substring(0);
-            if(selection.matches("1")){
+        while (waitingForInput) {
+            selection = scanner.next();
+            if (selection.matches("1")) {
                 waitingForInput = false;
-            }
-            else{
+            } else {
                 System.out.println("Select '1' or close");
             }
 
         }
         return Integer.parseInt(selection);
     }
+
     static void runBasicExplorer() {
 
         Scanner scanner = new Scanner(System.in);
 
-        ExploreFileBS exploreFile = new FS_explorer();
+        ExploreFileBS exploreFile = new FS_explorer(true);
 
         System.out.println("Starting basic demonstration, hit enter each step in order to continue");
+
         scanner.nextLine();
 
         System.out.println("Building a mock example file system using the addFile and addDir methods");
 
         buildFileSystem(exploreFile);
+
+        testFileSystem(scanner, exploreFile);
+
+        exploreFile.saveDataToFile();
+    }
+
+    private static void testFileSystem(Scanner scanner, ExploreFileBS exploreFile) {
 
         scanner.nextLine();
 
@@ -70,10 +77,10 @@ public class ExampleDemo {
         scanner.nextLine();
     }
 
-    static void buildFileSystem(ExploreFileBS exploreFile) {
+    private static void buildFileSystem(ExploreFileBS exploreFile) {
 
-//        exploreFile.addFile("/", "file_1Test", 10);
-//        exploreFile.addFile("/", "file_2Test", 20);
+        exploreFile.addFile("/", "file_1Test", 10);
+        exploreFile.addFile("/", "file_2Test", 20);
 
         exploreFile.addDir("/", "dir_a");
         exploreFile.addFile("dir_a", "file_a1", 30);
@@ -95,5 +102,4 @@ public class ExampleDemo {
         exploreFile.addFile("dir_ca", "file_ca1", 30);
         exploreFile.addFile("dir_cb", "file_cb1", 40);
     }
-
 }

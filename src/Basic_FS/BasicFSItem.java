@@ -1,11 +1,10 @@
 package Basic_FS;
 
+import java.io.Serializable;
 import java.util.Date;
 
-
 //Describes the basics of any item on the file system.
-public class BasicFSItem {
-
+public abstract class BasicFSItem implements Serializable {
     String name;
     Date creationDate;
     Directory parent = null;
@@ -19,32 +18,11 @@ public class BasicFSItem {
         this.parent = parent;
     }
 
-    String getFilePath(){
-        if(this.name.equals("/")){
-            return "/";
+    void printTab(int index){
+        for (int i = 0; i < index; i++) {
+            System.out.print("\t");
         }
-        return getFilePathRecus(this, "");
     }
 
-    //In case not in first and we need to search file
-    private String getFilePathRecus(BasicFSItem item , String path){
-        if(item.name.equals("/")){
-            return "/";
-        }
-        String resPath = getFilePathRecus(item.parent , path);
-        return resPath + "/" + item.name;
-    }
-
-    public Directory getParent(){
-        return this.parent;
-    }
-    public String getName(){
-        return this.name;
-    }
-
-
-
-    public void print(){
-        System.out.println( "File Name: " + this.name );
-    }
+    public abstract void print(int index);
 }

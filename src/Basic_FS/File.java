@@ -1,13 +1,13 @@
 package Basic_FS;
-import Basic_FS.BasicFSItem;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 //Basic_FS.File System item storing and shown data written
 //Represent data written to disk
 
-class File extends BasicFSItem {
+class File extends BasicFSItem implements Serializable {
     private int size;
 
     public File(String name, int size) {
@@ -15,9 +15,10 @@ class File extends BasicFSItem {
         this.size = size;
     }
 
-    public void print(){
+    public void print(int index){
+        printTab(index);
         DateFormat dateFormat = new SimpleDateFormat("MMM d HH:mm");
-        System.out.println("The File size is: " + this.size + "K " + dateFormat.format(super.creationDate) + " " + super.name);
+        System.out.println(super.name  + "   " + "[" +  dateFormat.format(super.creationDate) + " " + "  The File size is: " + this.size + "K]");
     }
 
     @Override

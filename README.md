@@ -61,3 +61,11 @@ The design should include:
 * The major methods and members of each class
 
 ------------------
+## Test Cases
+
+In order to run test case: 
+Run the main method and follow the constructions.
+
+Add the option to read and write to file in case we will close the program, the file name is: fileSystem
+In each test-run the program will test if the file exist and data can be read from or will create 
+new file with the data after finishing running. 
